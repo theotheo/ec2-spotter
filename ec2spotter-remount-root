@@ -191,7 +191,8 @@ mkdir $NEWMNT
 mv /sbin/init /sbin/init.backup
 cat >/sbin/init <<EOF11
 #!/bin/sh
-mount $DEVICE $NEWMNT
+echo "Hello from script"
+mount $DEVICE $NEWMNT -t ext4
 [ ! -d $NEWMNT/$OLDMNT ] && mkdir -p $NEWMNT/$OLDMNT
 
 cd $NEWMNT
